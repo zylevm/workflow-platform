@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E3FC694A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowPlatform.Domain.Tests", "tests\WorkflowPlatform.Domain.Tests\WorkflowPlatform.Domain.Tests.csproj", "{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowPlatform.Application", "src\WorkflowPlatform.Application\WorkflowPlatform.Application.csproj", "{A34B1203-7785-4245-BACA-95C804034341}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowPlatform.Application.Tests", "tests\WorkflowPlatform.Application.Tests\WorkflowPlatform.Application.Tests.csproj", "{29BA7A4A-953D-4EA8-8C29-EBE9AE918453}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,9 +32,19 @@ Global
 		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A34B1203-7785-4245-BACA-95C804034341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A34B1203-7785-4245-BACA-95C804034341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A34B1203-7785-4245-BACA-95C804034341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A34B1203-7785-4245-BACA-95C804034341}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29BA7A4A-953D-4EA8-8C29-EBE9AE918453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BA7A4A-953D-4EA8-8C29-EBE9AE918453}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BA7A4A-953D-4EA8-8C29-EBE9AE918453}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BA7A4A-953D-4EA8-8C29-EBE9AE918453}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AFFE4B1D-5338-4088-908A-D17E95F0FE8F} = {CE1EA601-0D07-4529-9688-F30ED6835ED7}
 		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8} = {E3FC694A-01CD-4C22-87B2-29E90E435F38}
+		{A34B1203-7785-4245-BACA-95C804034341} = {CE1EA601-0D07-4529-9688-F30ED6835ED7}
+		{29BA7A4A-953D-4EA8-8C29-EBE9AE918453} = {E3FC694A-01CD-4C22-87B2-29E90E435F38}
 	EndGlobalSection
 EndGlobal
