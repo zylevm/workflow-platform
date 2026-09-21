@@ -47,23 +47,61 @@ Enterprise-style платформа для управления бизнес-п�
 
 ## Архитектура
 
-Проект развивается по многослойной архитектуре:
+Проект развивается по многослойной архитектуре.
+
+На текущем этапе реализованы следующие проекты:
 
 ```text
 WorkflowPlatform
 │
 ├── src
-│   ├── WorkflowPlatform.Api
-│   ├── WorkflowPlatform.Application
 │   ├── WorkflowPlatform.Domain
-│   └── WorkflowPlatform.Infrastructure
+│   │   ├── Entities
+│   │   └── Enums
+│   │
+│   └── WorkflowPlatform.Application
+│       └── Documents
+│           ├── Repositories
+│           └── SubmitDocument
 │
 └── tests
     ├── WorkflowPlatform.Domain.Tests
-    └── WorkflowPlatform.IntegrationTests
+    └── WorkflowPlatform.Application.Tests
 ```
 
-На текущем этапе реализован только `Domain`. Остальные проекты будут добавляться постепенно.
+В дальнейшем архитектура будет расширяться за счёт API и Infrastructure-слоёв.
+
+### Domain Layer
+
+`WorkflowPlatform.Domain` содержит предметную область и бизнес-правила.
+
+В Domain реализована сущность `Document`, которая управляет собственным жизненным циклом и не зависит от Application Layer.
+
+### Application Layer
+
+`WorkflowPlatform.Application` содержит сценарии использования системы.
+
+На текущем этапе реализован use case:
+
+- `SubmitDocumentHandler` — отправка документа на согласование.
+
+Handler отвечает за orchestration сценария, а бизнес-правила перехода состояния остаются в Domain-модели.
+
+Для работы с документами используется абстракция:
+
+```csharp
+IDocumentRepository
+```
+
+Текущая реализация:
+
+```csharp
+InMemoryDocumentRepository
+```
+
+Таким образом, Application Layer зависит от контракта репозитория, а конкретная реализация может быть заменена без изменения `SubmitDocumentHandler`.
+
+В проекте используется constructor injection для передачи зависимостей в Handler.
 
 ## Текущий прогресс
 
@@ -77,20 +115,17 @@ WorkflowPlatform
 
 ### Application
 
-Добавлен Application Layer для реализации сценариев использования системы.
-
-На текущем этапе реализован use case:
-
-- `SubmitDocumentHandler` — отправка документа на согласование.
-
-Application Layer отвечает за orchestration сценария, а бизнес-правила перехода состояния остаются в Domain-модели.
-
-Для Application Layer добавлены отдельные автоматические тесты.
+- [x] Application Layer
+- [x] Use Case `SubmitDocument`
+- [x] `SubmitDocumentHandler`
+- [x] Интерфейс `IDocumentRepository`
+- [x] `InMemoryDocumentRepository`
+- [x] Constructor Injection
+- [x] Unit-тесты Application Layer
 
 ### Backend
 
 - [ ] ASP.NET Core Web API
-- [ ] Application Layer
 - [ ] PostgreSQL
 - [ ] Entity Framework Core
 - [ ] Аутентификация и авторизация
@@ -127,20 +162,31 @@ PendingApproval
   │
   └── Reject()  ──→ Rejected
 ```
-  
+
 Недопустимые переходы между состояниями блокируются непосредственно в Domain-модели.
 
 ## Тестирование
 
 Для автоматического тестирования используется `xUnit`.
 
-На текущем этапе тестами покрыты:
+### Domain Tests
+
+Проверяются:
 
 - начальное состояние документа;
 - отправка документа на согласование;
 - запрет утверждения черновика;
 - утверждение документа;
 - отклонение документа.
+
+### Application Tests
+
+Проверяется сценарий:
+
+- получение документа через Repository;
+- выполнение `SubmitDocumentHandler`;
+- изменение состояния документа;
+- сохранение документа через Repository.
 
 Текущий результат:
 
@@ -158,4 +204,4 @@ PendingApproval
 4. Фиксироваться в Git.
 5. Отражаться в документации проекта.
 
-Цель — постепенно построить полноценную backend-систему.
+Цель — постепенно построить полноценную backend-систему, одновременно изучая C#, архитектуру, тестирование и современные инструменты разработки.

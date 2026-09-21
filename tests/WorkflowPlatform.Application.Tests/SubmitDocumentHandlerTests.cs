@@ -1,3 +1,4 @@
+using WorkflowPlatform.Application.Documents.Repositories;
 using WorkflowPlatform.Application.Documents.SubmitDocument;
 using WorkflowPlatform.Domain.Entities;
 using WorkflowPlatform.Domain.Enums;
@@ -11,10 +12,14 @@ public class SubmitDocumentHandlerTests
     {
         // Arrange
         var document = new Document("Test document");
-        var handler = new SubmitDocumentHandler();
+
+        var repository = new InMemoryDocumentRepository();
+        repository.Save(document);
+
+        var handler = new SubmitDocumentHandler(repository);
 
         // Act
-        handler.Handle(document);
+        handler.Handle(document.Id);
 
         // Assert
         Assert.Equal(DocumentStatus.PendingApproval, document.Status);
