@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CE1EA601-0D07-4529-9688-F30ED6835ED7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowPlatform.Domain", "src\WorkflowPlatform.Domain\WorkflowPlatform.Domain.csproj", "{AFFE4B1D-5338-4088-908A-D17E95F0FE8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E3FC694A-01CD-4C22-87B2-29E90E435F38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkflowPlatform.Domain.Tests", "tests\WorkflowPlatform.Domain.Tests\WorkflowPlatform.Domain.Tests.csproj", "{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFFE4B1D-5338-4088-908A-D17E95F0FE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFE4B1D-5338-4088-908A-D17E95F0FE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFE4B1D-5338-4088-908A-D17E95F0FE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFE4B1D-5338-4088-908A-D17E95F0FE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFFE4B1D-5338-4088-908A-D17E95F0FE8F} = {CE1EA601-0D07-4529-9688-F30ED6835ED7}
+		{17F8E754-1D5A-49C9-B3E1-A6390FB47AA8} = {E3FC694A-01CD-4C22-87B2-29E90E435F38}
+	EndGlobalSection
+EndGlobal
