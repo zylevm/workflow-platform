@@ -61,7 +61,9 @@ WorkflowPlatform
 └── tests
     ├── WorkflowPlatform.Domain.Tests
     └── WorkflowPlatform.IntegrationTests
-    На текущем этапе реализован только `Domain`. Остальные проекты будут добавляться постепенно.
+```
+
+На текущем этапе реализован только `Domain`. Остальные проекты будут добавляться постепенно.
 
 ## Текущий прогресс
 
